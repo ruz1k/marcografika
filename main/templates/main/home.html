@@ -1,0 +1,129 @@
+{% extends 'main/index.html' %} {% load static %}
+{%block title%}Главная страница{%endblock%}
+{%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.scss' %}" />
+{%endblock%}
+{%block scripts%}
+
+{%endblock%}
+{%block content%}
+<div class="wrapper__home">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="media/images/carousel1.jpg" width="1920" height="780" />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="media/images/carousel2.jpg" width="1920" height="780" />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="media/images/carousel3.jpg" width="1920" height="780" />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="media/images/carousel4.jpg" width="1920" height="780" />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="media/images/carousel5.jpg" width="1920" height="780" />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="media/images/carousel6.jpg" width="1920" height="780" />
+            </div>
+        </div>
+    </div>
+    <div class="carousel-info">
+        <h1>Студия печати на Космонавтов Marcografika</h1>
+        <ul>
+            <li>Услуги типографии, фотопечать, cувенирная продукция</li>
+            <li>Качественная печать любой сложности</li>
+            <li>Опытные специалисты</li>
+            <li>Приемлемые цены</li>
+        </ul>
+        <a href>Сделать заказ</a>
+    </div>
+    <div class="sections">
+        <div class="sections__item">
+            <div class="sections__row">
+                <h2>Услуги</h2>
+            </div>
+            <div class="sections__row">
+                <div class="item__images">
+                    <img src="media/images/carousel1.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__link service">
+                    <a href>Услуги</a>
+                    <img src="media/icons/right-arrow.svg" width="20" height="20" />
+                </div>
+            </div>
+        </div>
+        <div class="sections__item">
+            <div class="sections__row">
+                <h2>Процесс</h2>
+            </div>
+            <div class="sections__row">
+                <div class="item__images">
+                    <img src="media/images/carousel1.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__link process">
+                    <a href>Процесс</a>
+                    <img src="media/icons/right-arrow.svg" width="20" height="20" />
+                </div>
+            </div>
+        </div>
+        <div class="sections__item">
+            <div class="sections__row">
+                <h2>Пример работ</h2>
+            </div>
+            <div class="sections__row">
+                <div class="item__images">
+                    <img src="media/images/carousel1.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__images">
+                    <img src="media/images/carousel2.jpg" width="274" height="274" />
+                </div>
+                <div class="item__link examples">
+                    <a href>Работы</a>
+                    <img src="media/icons/right-arrow.svg" width="20" height="20" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block footer%}
+<footer>
+    <div class="footer__container">
+        <div class="container__content">
+            <div class="content">
+                <a href>
+                    <img src="media/icons/logo.png" width="220" height="40" />
+                </a>
+                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
+            </div>
+            <div class='scroll-to-top'>
+                <img src="media/icons/to-top.svg" width="20" height="20" />
+            </div>
+            <script type="text/javascript">
+                $('.scroll-to-top').click(function () {
+                    $(window).scrollTop(0);
+                });
+            </script>
+        </div>
+    </div>
+</footer>
+{%endblock%}

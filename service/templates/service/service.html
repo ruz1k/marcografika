@@ -1,0 +1,28 @@
+{% extends 'main/index.html' %} {% load static %}
+
+{%block content%}
+<h1>Service</h1>
+{% endblock %}
+{%block footer%}
+<footer>
+    <div class="footer__container">
+        <div class="container__content">
+            <div class="content">
+                <a href>
+                    <img src="media/icons/logo.png" width="220" height="40" />
+                </a>
+                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
+            </div>
+            <div class='scroll-to-top'>
+                <img src="media/icons/to-top.svg" width="20" height="20" />
+            </div>
+            <script type="text/javascript">
+                $('.scroll-to-top').click(function () {
+                    $(window).scrollTop(0);
+                });
+            </script>
+        </div>
+    </div>
+</footer>
+{%endblock%}
