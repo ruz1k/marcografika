@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.renderIndex, name="renderIndex")
+    path('', views.renderIndex, name="index")
 ]

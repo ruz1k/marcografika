@@ -1,0 +1,54 @@
+{% extends 'main/index.html' %} {% load static %}
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Услуги{% endif %}
+{% endblock %}
+{% block content %}
+    <div id="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url "availability:product_list" %}">Все услуги</a>
+            </li>
+            {% for c in categories %}
+                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="main" class="product-list">
+        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        {% for product in products %}
+            <div class="item">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                </a>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                ${{ product.price }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{%block footer%}
+<footer>
+    <div class="footer__container">
+        <div class="container__content">
+            <div class="content">
+                <a href>
+                    <img src={% static "media/icons/logo.png" %} width="220" height="40" />
+                </a>
+                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
+            </div>
+            <div class='scroll-to-top'>
+                <img src={% static "media/icons/to-top.svg" %} width="20px" height="20px"/>
+            </div>
+            <script type="text/javascript">
+                $('.scroll-to-top').click(function () {
+                    $(window).scrollTop(0);
+                });
+            </script>
+        </div>
+    </div>
+</footer>
+{%endblock%}
