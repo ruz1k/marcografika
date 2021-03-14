@@ -1,4 +1,7 @@
 {% extends 'main/index.html' %} {% load static %}
+{%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/service.scss' %}" />
+{%endblock%}
 {% block title %}
     {% if category %}{{ category.title }}{% else %}Услуги{% endif %}
 {% endblock %}
@@ -6,17 +9,17 @@
     <div class="product-detail">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         <h1>{{ product.name }}</h1>
-        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-        <p class="price">${{ product.price }}</p>
-        {{ product.description|linebreaks }}
+        <span>Категория: <a href="{% url "availability:product_list" %}">{{ product.category }}</a></span>
+        <p>{{ product.description|linebreaks }}<span>
+        <span class="price">${{ product.price }}</p>
     </div>
 {% endblock %}
 {%block footer%}
-<footer>
+<footer class="service-detail">
     <div class="footer__container">
         <div class="container__content">
             <div class="content">
-                <a href>
+                <a href="{%url 'index' %}">
                     <img src={% static "media/icons/logo.png" %} width="220" height="40" />
                 </a>
                 <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>

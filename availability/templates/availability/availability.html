@@ -1,47 +1,68 @@
 {% extends 'main/index.html' %} {% load static %}
 {% block title %}
-    {% if category %}{{ category.name }}{% else %}Услуги{% endif %}
+{% if category %}{{ category.name }}{% else %}Услуги{% endif %}
 {% endblock %}
+{%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/service.scss' %}" />
+{%endblock%}
 {% block content %}
-    <div id="sidebar">
-        <h3>Categories</h3>
-        <ul>
-            <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "availability:product_list" %}">Все услуги</a>
-            </li>
-            {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-        {% for product in products %}
-            <div class="item">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-                ${{ product.price }}
+<div class="wrapper service">
+    <div class="categories_filter">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Категории
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="category_menu">
+                            <ul>
+                                <li {% if not category %}class="selected" {% endif %} title="Все услуги">
+                                    <a href="{% url "availability:product_list" %}">Все услуги</a>
+                                </li>
+                                {% for c in categories %}
+                                <li {% if category.slug == c.slug %}class="selected" {% endif %} title={{ c.name }}>
+                                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="product-list">
+        {% for product in products %}
+        <div class="item">
+            <a href="{{ product.get_absolute_url }}">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}../../../../../static/media/icons/no_photo.png {% endif %}"
+                    width="256" height="256">
+                <p>{{ product.name }}</p>
+                <span>{{ product.price }} ₽</span>
+            </a>
+        </div>
         {% endfor %}
     </div>
+</div>
 {% endblock %}
 {%block footer%}
-<footer>
+<footer class="service">
     <div class="footer__container">
         <div class="container__content">
             <div class="content">
-                <a href>
+                <a href="{%url 'index' %}">
                     <img src={% static "media/icons/logo.png" %} width="220" height="40" />
                 </a>
                 <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
                 <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
             </div>
             <div class='scroll-to-top'>
-                <img src={% static "media/icons/to-top.svg" %} width="20px" height="20px"/>
+                <img src={% static "media/icons/to-top.svg" %} width="20px" height="20px" />
             </div>
             <script type="text/javascript">
                 $('.scroll-to-top').click(function () {

@@ -47,7 +47,7 @@
                 <nav class="links__content">
                     <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
                         страница</a>
-                    <a href="/service" {% if request.path == '/service' %} class="active" {% endif %}>Услуги</a>
+                    <a href="{% url "availability:product_list" %}" {% if request.path == '/service/' or request.path == '/service/{{ product.get_absolute_url }}' %} class="active" {% endif %}>Услуги</a>
                     <a href>Процесс</a>
                     <a href>Оформить заказ</a>
                     <a href>Контакты</a>
