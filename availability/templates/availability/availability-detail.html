@@ -1,18 +1,27 @@
 {% extends 'main/index.html' %} {% load static %}
 {%block styles%}
-<link rel="stylesheet" type="text/css" href="{% static 'css/service.scss' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/service.css' %}" />
 {%endblock%}
 {% block title %}
-    {% if category %}{{ category.title }}{% else %}Услуги{% endif %}
+{% if category %}{{ category.title }}{% else %}Услуги{% endif %}
 {% endblock %}
 {% block content %}
-    <div class="product-detail">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-        <h1>{{ product.name }}</h1>
-        <span>Категория: <a href="{% url "availability:product_list" %}">{{ product.category }}</a></span>
-        <p>{{ product.description|linebreaks }}<span>
-        <span class="price">${{ product.price }}</p>
+<div class="path">
+    <a href="{% url "availability:product_list" %}">Услуги</a>
+    <img src={% static "media/icons/to-top.svg" %} alt="arrow" width="10" height="10" />
+    <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+</div>
+<div class="product-detail">
+    <div class="product-detail__image-content">
+        <img
+            src="{% if product.image %}{{ product.image.url }}{% else %}../../../../../static/media/icons/no_photo.png{% endif %}" alt="product-image">
+        <span class="price">Цена: {{ product.price }}₽</p>
     </div>
+    <div class="product-detail__description">
+        <h1>{{product.name}}</h1>
+        <p>{{ product.description|linebreaks }}<span>
+    </div>
+</div>
 {% endblock %}
 {%block footer%}
 <footer class="service-detail">
@@ -20,13 +29,13 @@
         <div class="container__content">
             <div class="content">
                 <a href="{%url 'index' %}">
-                    <img src={% static "media/icons/logo.png" %} width="220" height="40" />
+                    <img src={% static "media/icons/logo.png" %} alt="logo" width="220" height="40" />
                 </a>
                 <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
                 <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
             </div>
             <div class='scroll-to-top'>
-                <img src={% static "media/icons/to-top.svg" %} width="20px" height="20px"/>
+                <img src={% static "media/icons/to-top.svg" %} alt="arrow" width="20px" height="20px" />
             </div>
             <script type="text/javascript">
                 $('.scroll-to-top').click(function () {

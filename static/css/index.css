@@ -188,6 +188,18 @@ footer {
     transform: rotate(-90deg);
 }
 
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    footer.home {
+        margin-top: 1150px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1200px) {
+    footer.home {
+        margin-top: -50px;
+    }
+}
+
 @media screen and (max-width: 1200px) and (min-width: 1024px) {
     .links__content, .container__logo-social {
         max-width: 1024px;
@@ -223,6 +235,12 @@ footer {
     }
     footer {
         margin-top: 300px;
+    }
+    footer span {
+        position: relative !important;
+    }
+    footer.service .date, footer.service-detail .date {
+        left: 30%;
     }
 }
 

@@ -1,19 +1,17 @@
-<nav aria-label="Page navigation example">
+<div class="pagination" aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item">
-            {% if page.has_previous %}
-            <a class="page-link" href="?page={{ page.previous_page_number }}" aria-label="Previous">
+            <a {% if page.has_previous %} class="page-link active" {% else %} class="page-link disabled" {% endif %}
+            {% if page.has_previous %}  href="?page={{ page.previous_page_number }}" {% else %} href="#" {% endif %} aria-label="Next">
                 <span aria-hidden="true">&laquo;</span>
             </a>
-            {% endif %}
         </li>
-        <li class="page-item"><a class="page-link" href="#">{{page.number}}/{{ page.paginator.num_pages }}</a></li>
+        <li class="page-item"><a class="page-link count" href="#">{{page.number}} / {{ page.paginator.num_pages }}</a></li>
         <li class="page-item">
-            {% if page.has_next %}
-            <a class="page-link" href="?page={{ page.next_page_number }}" aria-label="Next">
+            <a {% if page.has_next %} class="page-link active" {% else %} class="page-link disabled" {% endif %}
+            {% if page.has_next %} href="?page={{ page.next_page_number }}" {% else %} href="#" {% endif %} aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
-            {% endif %}
         </li>
     </ul>
 </nav>
