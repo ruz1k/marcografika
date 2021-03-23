@@ -78,6 +78,10 @@ a {
     margin-right: 0;
 }
 
+footer.default {
+    margin-top: 32px;
+}
+
 .container__logo-social {
     display: flex;
     flex-wrap: wrap;

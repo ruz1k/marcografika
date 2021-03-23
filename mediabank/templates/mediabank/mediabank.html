@@ -1,0 +1,34 @@
+{% extends 'main/index.html' %} {% load static %}
+{%block title%}Процесс{%endblock%}
+{%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+{%endblock%}
+{% block content %}
+{% for photo in mediaFile %}
+<h1>{{photo.name}}</h1>
+<img src="{{photo.image.url}}" />
+{%endfor%}
+{% endblock %}
+{%block footer%}
+<footer class="default">
+    <div class="footer__container">
+        <div class="container__content">
+            <div class="content">
+                <a href="{%url 'index' %}">
+                    <img src={% static "media/icons/logo.png" %} alt="logo" width="220" height="40" />
+                </a>
+                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
+            </div>
+            <div class='scroll-to-top'>
+                <img src={% static "media/icons/to-top.svg" %} alt="arrow" width="20px" height="20px" />
+            </div>
+            <script type="text/javascript">
+                $('.scroll-to-top').click(function () {
+                    $(window).scrollTop(0);
+                });
+            </script>
+        </div>
+    </div>
+</footer>
+{%endblock%}

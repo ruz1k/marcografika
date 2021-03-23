@@ -48,7 +48,7 @@
                     <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
                         страница</a>
                     <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active" {% endif %}>Услуги</a>
-                    <a href>Процесс</a>
+                    <a href="{% url "mediabank:media_photo" %}" {% if 'mediabank' in request.path %} class="active" {% endif %}>Процесс</a>
                     <a href>Оформить заказ</a>
                     <a href>Контакты</a>
                 </nav>

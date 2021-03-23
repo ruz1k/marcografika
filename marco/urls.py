@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     re_path(r'^service/', include('availability.urls', namespace='availability')),
+    path('work-examples/', include('mediabank.urls', namespace='mediabank'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
