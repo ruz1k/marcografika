@@ -1,0 +1,350 @@
+.mediabank-image {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.mediabank-image__item {
+    margin-right: 32px;
+    margin-bottom: 32px;
+    max-width: 300px;
+}
+
+.mediabank-image__item:nth-child(4n+4) {
+    margin-right: 0;
+}
+
+.mediabank-image__item img {
+    max-width: 268px;
+    max-height: 268px;
+    width: 268px;
+    height: 268px;
+    cursor: zoom-in;
+    margin-bottom: 8px;
+    object-fit: cover;
+}
+
+.mediabank-image__item p {
+    font-weight: bold;
+    font-size: 14px;
+    max-width: 268px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav-pills {
+    max-width: 1200px;
+    margin: 32px auto 64px;
+}
+
+.tab-content {
+    padding-top: 32px;
+}
+
+.nav-pills .nav-link.active {
+    background: none !important;
+    color: black;
+}
+
+.nav-item {
+    margin-right: 32px;
+}
+
+.nav-pills .nav-link.active span {
+    background-image: linear-gradient(currentColor,currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    transition: background-size .3s;
+    font-weight: bold;
+    padding-bottom: 1px;
+}
+
+.nav-pills .nav-link span {
+    font-weight: bold;
+    padding-bottom: 1px;
+    position: relative;
+    top: 3px;
+}
+
+.nav-pills .nav-link img {
+    margin-right: 4px;
+}
+
+footer.default .content .date {
+    left: 0 !important;
+}
+
+.nav-link {
+    padding: 0 !important;
+}
+
+.tab-pane {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Eliminates padding, centers the thumbnail */
+
+body, html {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    }
+
+    
+    /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+    
+    .lightbox-target {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+    }
+    
+    /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+    
+    .lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    width: 100% !important;
+    height: 100% !important;
+    bottom: 0;
+    max-height: 0%;
+    max-width: 0%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    }
+    
+    /* Styles the close link, adds the slide down transition */
+    
+    a.lightbox-close {
+    display: block;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    }
+    
+    /* Provides part of the "X" to eliminate an image from the close link */
+    
+    a.lightbox-close:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: white;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    }
+    
+    /* Provides part of the "X" to eliminate an image from the close link */
+    
+    a.lightbox-close:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: white;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    }
+    
+    /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+    
+    .lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    }
+    
+    .lightbox-target:target img {
+    max-height: 60%;
+    max-width: 60%;
+    margin-bottom: auto !important;
+    }
+
+    .lightbox-target p {
+        font-size: 30px !important;
+        text-align: center;
+        color: white;
+        padding-top: 32px;
+        max-width: 100% !important;
+    }
+    
+    .lightbox-target:target a.lightbox-close {
+    top: 0px;
+    }
+    
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .mediabank-image__item {
+        margin-right: 32px;
+        margin-bottom: 32px;
+        max-width: 220px;
+    }
+    
+    .mediabank-image__item img {
+        max-width: 222px;
+        max-height: 222px;
+        width: 222px;
+        height: 222px;
+        cursor: zoom-in;
+        margin-bottom: 8px;
+        object-fit: cover;
+    }
+    
+    .mediabank-image__item p {
+        font-weight: bold;
+        font-size: 14px;
+        max-width: 222px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .nav-pills {
+        max-width: 1024px;
+        margin: 32px auto 64px;
+    }
+
+    .tab-pane {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 728px) {
+    .mediabank-image__item {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        max-width: 230px;
+    }
+
+    .mediabank-image__item:nth-of-type(3n + 3) {
+        margin-right: 0;
+    }
+
+    .mediabank-image__item:nth-child(4n + 4) {
+        margin-right: 16px;
+    }
+
+    .mediabank-image__item img {
+        max-width: 230px;
+        max-height: 230px;
+        width: 230px;
+        height: 230px;
+        cursor: zoom-in;
+        margin-bottom: 8px;
+        object-fit: cover;
+    }
+    
+    .mediabank-image__item p {
+        font-weight: bold;
+        font-size: 14px;
+        max-width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .nav-pills {
+        max-width: 728px;
+        margin: 32px auto 64px;
+    }
+
+    .tab-pane {
+        max-width: 728px;
+        margin: 0 auto;
+    }
+    .lightbox-target:target img {
+        max-height: 230px !important;
+        max-width: 100%;
+    }
+    footer.default .content .date {
+        left: 36% !important;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 328px) {
+    .mediabank-image__item {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        max-width: 230px;
+    }
+
+    .mediabank-image__item:nth-of-type(3n + 3) {
+        margin-right: 0;
+    }
+
+    .mediabank-image__item:nth-child(4n + 4) {
+        margin-right: 16px;
+    }
+
+    .mediabank-image__item img {
+        max-width: 230px;
+        max-height: 230px;
+        width: 230px;
+        height: 230px;
+        cursor: zoom-in;
+        margin-bottom: 8px;
+        object-fit: cover;
+    }
+    
+    .mediabank-image__item p {
+        font-weight: bold;
+        font-size: 14px;
+        max-width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .nav-pills {
+        margin: 120px 16px 64px;
+    }
+
+    .tab-pane {
+        max-width: 728px;
+        margin: 0 16px;
+    }
+
+    .lightbox-target:target img {
+        max-height: 230px !important;
+        max-width: 100%;
+    }
+}

@@ -14,3 +14,17 @@ class PhotoMedia(models.Model):
 
     def __str__(self):
         return self.name
+
+class VideoMedia(models.Model):
+    name = models.CharField(max_length=200, db_index=True)
+    slug = models.SlugField(max_length=200, db_index=True)
+    link = models.URLField(null=True, blank=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Пример работ(Видео)'
+        verbose_name_plural = 'Пример работ(Видео)'
+        index_together = (('id', 'slug'),)
+    
+    def __str__(self):
+        return self.name

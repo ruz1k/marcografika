@@ -1,13 +1,58 @@
 {% extends 'main/index.html' %} {% load static %}
 {%block title%}Процесс{%endblock%}
 {%block styles%}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/mediabank.css' %}" />
 {%endblock%}
 {% block content %}
-{% for photo in mediaFile %}
-<h1>{{photo.name}}</h1>
-<img src="{{photo.image.url}}" />
-{%endfor%}
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+            type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+            <img src={% static 'media/icons/image.svg' %} alt="img" width="20" height="20" />
+            <span>Фото</span>
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+            <img src={% static 'media/icons/video.svg' %} alt="mp4" width="20" height="20" />
+            <span>
+                Видео
+            </span>
+        </button>
+    </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="mediabank-image">
+            {% for photo in mediaFile %}
+            <div class="mediabank-image__item">
+                <a href="#{{photo.image.url}}" class="open-modal-image">
+                <img class="images" src="{{photo.image.url}}" />
+                <script type="text/javascript">
+                    $('.open-modal-image').click(function () {
+                        $("body").addClass('no-overflow');
+                    });
+                </script>
+            </a>
+                <p>{{photo.name}}</p>
+                <div class="lightbox-target" id="{{photo.image.url}}">
+                    <img src="{{photo.image.url}}"/>
+                    <p>{{photo.name}}</p>
+                    <a class="lightbox-close" href="#"></a>
+                    <script type="text/javascript">
+                        $('.lightbox-close').click(function () {
+                            $("body").removeClass('no-overflow');
+                        });
+                    </script>
+                 </div>
+            </div>
+            {%endfor%}
+        </div>
+        {% include "./pagination.html" with page=mediaFile %}
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">lol</div>
+</div>
 {% endblock %}
 {%block footer%}
 <footer class="default">

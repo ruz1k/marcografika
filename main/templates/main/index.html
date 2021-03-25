@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,7 @@
     {%block scripts%}{%endblock%}
 </head>
 
-<body>
+<body {% if "media" in request.path%} class="overflow-hidden" {%endif%}>
     <header>
         <div class="header__container">
             <div class="container__wrapper">
@@ -45,21 +46,20 @@
             </div>
             <div class="container__links">
                 <nav class="links__content">
-                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
-                        страница</a>
+                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная страница</a>
                     <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active" {% endif %}>Услуги</a>
-                    <a href="{% url "mediabank:media_photo" %}" {% if 'mediabank' in request.path %} class="active" {% endif %}>Процесс</a>
+                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active" {% endif %}>Процесс</a>
                     <a href>Оформить заказ</a>
                     <a href>Контакты</a>
                 </nav>
             </div>
             <script type="text/javascript">
-                    let header = $('.container__links'),
-                        scrollPrev = 0;
+                let header = $('.container__links'),
+                    scrollPrev = 0;
                 $(window).scroll(function () {
                     let scrolled = $(window).scrollTop();
-        
-        
+
+
                     if (scrolled > 100 && scrolled > scrollPrev) {
                         header.addClass('out');
                     } else {
@@ -71,6 +71,17 @@
         </div>
     </header>
     <div class="main-wrapper">
+        <div class="loader">
+            <div class="loader_inner"></div>
+            <script type="text/javascript">
+                $(window).on('load', function () {
+
+                    $(".loader_inner").fadeOut();
+                    $(".loader").delay(400).fadeOut("slow");
+
+                });
+            </script>
+        </div>
         {% block content %}{% endblock %}
     </div>
     {%block footer%}{%endblock%}
