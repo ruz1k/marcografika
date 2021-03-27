@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class PhotoMedia(models.Model):
     name = models.CharField(max_length=200, db_index=True)
+    description = models.TextField(blank=True)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
 

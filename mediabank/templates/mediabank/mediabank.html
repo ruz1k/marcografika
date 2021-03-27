@@ -28,24 +28,30 @@
             {% for photo in mediaFile %}
             <div class="mediabank-image__item">
                 <a href="#{{photo.image.url}}" class="open-modal-image">
-                <img class="images" src="{{photo.image.url}}" />
-                <script type="text/javascript">
-                    $('.open-modal-image').click(function () {
-                        $("body").addClass('no-overflow');
-                    });
-                </script>
-            </a>
+                    <img class="images" src="{{photo.image.url}}" />
+                    <script type="text/javascript">
+                        $('.open-modal-image').click(function () {
+                            $("body").addClass('no-overflow');
+                        });
+                    </script>
+                </a>
                 <p title={{photo.name}}>{{photo.name}}</p>
                 <div class="lightbox-target" id="{{photo.image.url}}">
-                    <img src="{{photo.image.url}}"/>
-                    <p>{{photo.name}}</p>
+                    <div class="card-content">
+                        <img src="{{photo.image.url}}" />
+                        <div class="card-content__text">
+                            <h1>{{photo.name}}</h1>
+                            <hr />
+                            <p>{{photo.description}}</p>
+                        </div>
+                    </div>
                     <a class="lightbox-close" href="#"></a>
                     <script type="text/javascript">
                         $('.lightbox-close').click(function () {
                             $("body").removeClass('no-overflow');
                         });
                     </script>
-                 </div>
+                </div>
             </div>
             {%endfor%}
         </div>
