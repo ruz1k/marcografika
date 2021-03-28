@@ -232,10 +232,65 @@ body, html {
         font-weight: 400 !important;
         max-width: 43% !important;
     }
+
+    .lightbox-target hr {
+        max-width: 43% !important;
+    }
     
     .lightbox-target:target a.lightbox-close {
     top: 0px;
     }
+
+
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
+    .lightbox-target h1 {
+        font-size: 20px !important;
+    }
+    
+    .lightbox-target p {
+        font-size: 14px !important;
+        max-width: 45% !important;
+    }
+
+    .lightbox-target .card-content img {
+        margin-right: 32px;
+    }
+    .lightbox-target:target .card-content {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+    .lightbox-target h1 {
+        font-size: 18px !important;
+    }
+    
+    .lightbox-target p {
+        font-size: 14px !important;
+    }
+    .lightbox-target .card-content img {
+        margin-right: 24px;
+    }
+    .lightbox-target:target .card-content {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .lightbox-target h1 {
+        font-size: 18px !important;
+    }
+    
+    .lightbox-target p {
+        font-size: 14px !important;
+    }
+    .lightbox-target .card-content img {
+        margin-right: 16px;
+    }
+    .lightbox-target:target .card-content {
+        max-width: 80%;
+    }
+}
     
 
 @media screen and (max-width: 1200px) and (min-width: 1024px) {
@@ -325,6 +380,35 @@ body, html {
     footer.default .content .date {
         left: 36% !important;
     }
+    .lightbox-target h1 {
+        font-size: 18px !important;
+        padding-top: 21px;
+        position: relative;
+        top: 8px;
+    }
+
+    .lightbox-target hr {
+        max-width: 100% !important;
+    }
+
+    .lightbox-target:target .card-content {
+        max-height: 55% !important;
+        max-width: 85% !important;
+    }
+    
+    .lightbox-target p {
+        font-size: 14px !important;
+        max-width: 90% !important;
+        padding-left: 8px;
+    }
+    .lightbox-target .card-content img {
+        margin-right: 0px;
+        max-width: 100% !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+    .lightbox-target:target img {
+        max-height: 220px;
+    }
 }
 
 @media screen and (max-width: 480px) and (min-width: 328px) {
@@ -373,5 +457,42 @@ body, html {
     .lightbox-target:target img {
         max-height: 230px !important;
         max-width: 100%;
+    }
+    .lightbox-target:target img {
+        max-height: 230px !important;
+        max-width: 100%;
+    }
+    footer.default .content .date {
+        left: 0% !important;
+    }
+    .lightbox-target h1 {
+        font-size: 18px !important;
+        padding-top: 21px;
+        position: relative;
+        top: 8px;
+    }
+
+    .lightbox-target hr {
+        max-width: 100% !important;
+    }
+
+    .lightbox-target:target .card-content {
+        max-height: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+    }
+    
+    .lightbox-target p {
+        font-size: 14px !important;
+        max-width: 90% !important;
+        padding-left: 8px;
+    }
+    .lightbox-target .card-content img {
+        margin-right: 0px;
+        max-width: 100% !important;
+        border-radius: 0 0 0 0 !important;
+    }
+    .lightbox-target:target img {
+        max-height: 200px;
     }
 }
