@@ -1,20 +1,14 @@
-{% extends 'main/index.html' %} {% load static %}
-{%block title%}Процесс{%endblock%}
-{%block styles%}
-<link rel="stylesheet" type="text/css" href="{% static 'css/mediabank.css' %}" />
-{%endblock%}
-{% block content %}
+{% extends 'main/index.html' %} {% load static %} {%block title%}Процесс{%endblock%} {%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mediabank.css' %}" /> {%endblock%} {% block content %}
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-            type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
             <img src={% static 'media/icons/image.svg' %} alt="img" width="20" height="20" />
             <span>Фото</span>
         </button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
             <img src={% static 'media/icons/video.svg' %} alt="mp4" width="20" height="20" />
             <span>
                 Видео
@@ -30,7 +24,7 @@
                 <a href="#{{photo.image.url}}" class="open-modal-image">
                     <img class="images" src="{{photo.image.url}}" />
                     <script type="text/javascript">
-                        $('.open-modal-image').click(function () {
+                        $('.open-modal-image').click(function() {
                             $("body").addClass('no-overflow');
                         });
                     </script>
@@ -43,11 +37,12 @@
                             <h1>{{photo.name}}</h1>
                             <hr />
                             <p>{{photo.description}}</p>
+                            <a href="#" class="button">Сделать заказ</a>
                         </div>
                     </div>
                     <a class="lightbox-close" href="#"></a>
                     <script type="text/javascript">
-                        $('.lightbox-close').click(function () {
+                        $('.lightbox-close').click(function() {
                             $("body").removeClass('no-overflow');
                         });
                     </script>
@@ -57,10 +52,50 @@
         </div>
         {% include "./pagination.html" with page=mediaFile %}
     </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">lol</div>
+    <div class="tab-pane fade video" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="video">
+            {% for video in mediaFileVideo %}
+            <div class="video__item">
+                <div class="video-player mediabank" data-video-id='{{video.link}}'>
+                    <img src="{{video.image.url}}" alt="custom-preview">
+                </div>
+                <p>{{video.name}}</p>
+            </div>
+            {% endfor %}
+            <script type="text/javascript">
+                let players = document.querySelectorAll('.video-player')
+
+                let loadPlayer = function(event) {
+                    let target = event.currentTarget
+                    let iframe = document.createElement('iframe')
+
+                    iframe.height = target.clientHeight
+                    iframe.width = target.clientWidth
+                    iframe.src = target.dataset.videoId + '?autoplay=1'
+                    iframe.setAttribute('frameborder', 0)
+
+                    target.classList.remove('mediabank')
+
+                    if (target.children.length) {
+                        target.replaceChild(iframe, target.firstElementChild)
+                    } else {
+                        target.appendChild(iframe)
+                    }
+                }
+
+                let config = {
+                    once: true
+                }
+
+                Array.from(players).forEach(function(player) {
+                    player.addEventListener('click', loadPlayer, config)
+                })
+            </script>
+        </div>
+        {% include "./pagination.html" with page=mediaFileVideo %}
+    </div>
 </div>
-{% endblock %}
-{%block footer%}
+{% endblock %} {%block footer%}
 <footer class="default">
     <div class="footer__container">
         <div class="container__content">
@@ -75,7 +110,7 @@
                 <img src={% static "media/icons/to-top.svg" %} alt="arrow" width="20px" height="20px" />
             </div>
             <script type="text/javascript">
-                $('.scroll-to-top').click(function () {
+                $('.scroll-to-top').click(function() {
                     $(window).scrollTop(0);
                 });
             </script>
