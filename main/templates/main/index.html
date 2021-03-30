@@ -32,23 +32,18 @@
                     <div class="social">
                         <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
                         <a href="tel:+79870690441">+7 988 888 8888</a>
-                        <a href="https://www.instagram.com/marcografika/">
-                            <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />
-                        </a>
-                        <a href="https://vk.com/fotobulak">
-                            <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40" />
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
-                            <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40" />
-                        </a>
+                        <img src={% static "media/icons/open-menu.svg" %} alt="menu" class="menu-btn" id="open-menu">
                     </div>
                 </div>
             </div>
             <div class="container__links">
                 <nav class="links__content">
-                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная страница</a>
-                    <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active" {% endif %}>Услуги</a>
-                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active" {% endif %}>Процесс</a>
+                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
+                        страница</a>
+                    <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active"
+                        {% endif %}>Услуги</a>
+                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
+                        {%endif %}>Процесс</a>
                     <a href>Оформить заказ</a>
                     <a href>Контакты</a>
                 </nav>
@@ -71,20 +66,73 @@
         </div>
     </header>
     <div class="main-wrapper">
-        <div class="loader">
-            <div class="loader_inner"></div>
-            <script type="text/javascript">
-                $(window).on('load', function () {
-
-                    $(".loader_inner").fadeOut();
-                    $(".loader").delay(400).fadeOut("slow");
-
-                });
-            </script>
-        </div>
         {% block content %}{% endblock %}
     </div>
     {%block footer%}{%endblock%}
+    <nav id="overlay" class="hamburger">
+        <div class="hamburger__header">
+            <a href="{%url 'index' %}">
+                <img src={% static 'media/icons/logo.png' %} alt="logo" width="220" height="40" />
+            </a>
+            <img src={% static "media/icons/close.svg" %} alt="menu" class="close-button" id="close-menu">
+        </div>
+        <div class="hamburger__content">
+            <ul>
+                <li>
+                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
+                        страница</a>
+                </li>
+
+                <li>
+                    <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active"
+                        {% endif %}>Услуги</a>
+                </li>
+
+                <li>
+                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
+                        {%endif %}>Процесс</a>
+                </li>
+
+                <li>
+                    <a href>Оформить заказ</a>
+                </li>
+                <li>
+                    <a href>Контакты</a>
+                </li>
+            </ul>
+            <div class="hamburger__information">
+                <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
+                <a href="tel:+79870690441">+7 988 888 8888</a>
+                <a href>Ул. Космонавтов, 71, Казань, Респ. Татарстан, 420061</a>
+                <div class="social-networks">
+                    <a href="https://www.instagram.com/marcografika/">
+                        <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />
+                    </a>
+                    <a href="https://vk.com/fotobulak">
+                        <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
+                        <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            const overlay = document.getElementById('overlay');
+            const closeMenu = document.getElementById('close-menu');
+
+
+            document.getElementById('open-menu').addEventListener('click', function () {
+                overlay.classList.add('show-menu');
+                $("body").addClass('no-overflow');
+            });
+
+            document.getElementById('close-menu').addEventListener('click', function () {
+                overlay.classList.remove('show-menu')
+                $("body").removeClass('no-overflow');
+            })
+        </script>
+    </nav>
 </body>
 
 </html>

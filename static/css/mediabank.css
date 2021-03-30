@@ -31,6 +31,8 @@
 .video p,
 .mediabank-image__item p {
     text-align: left;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .video__item {
@@ -130,10 +132,6 @@
     margin-right: 4px;
 }
 
-footer.default .content .date {
-    left: 0 !important;
-}
-
 .nav-link {
     padding: 0 !important;
 }
@@ -150,7 +148,6 @@ body,
 html {
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 
@@ -398,6 +395,20 @@ a.lightbox-close:after {
         max-width: 1024px;
         margin: 0 auto;
     }
+    .video-player {
+        width: 478px;
+    }
+    .video img {
+        max-width: 478px;
+    }
+    .video-player.mediabank::before {
+        left: 200px;
+        top: 125px;
+    }
+    .video__item {
+        margin-right: 16;
+        margin-bottom: 16px;
+    }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 728px) {
@@ -405,6 +416,9 @@ a.lightbox-close:after {
         margin-right: 16px;
         margin-bottom: 16px;
         max-width: 230px;
+    }
+    .content .date {
+        left: 36% !important;
     }
     .mediabank-image__item:nth-of-type(3n+3) {
         margin-right: 0;
@@ -429,6 +443,17 @@ a.lightbox-close:after {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+    .video-player {
+        width: 728px;
+    }
+    .video-player.mediabank::before {
+        left: 320px;
+        top: 125px;
+    }
+    .video__item {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
     .nav-pills {
         max-width: 728px;
         margin: 32px auto 64px;
@@ -440,9 +465,6 @@ a.lightbox-close:after {
     .lightbox-target:target img {
         max-height: 230px !important;
         max-width: 100%;
-    }
-    footer.default .content .date {
-        left: 36% !important;
     }
     .lightbox-target h1 {
         font-size: 18px !important;
@@ -478,6 +500,22 @@ a.lightbox-close:after {
         margin-bottom: 16px;
         max-width: 230px;
     }
+    .video-player {
+        width: 320px;
+        height: 256px;
+    }
+    .video-player img {
+        height: 256px;
+    }
+    .video-player.mediabank::before {
+        left: 118px;
+        top: 75px;
+        transform: scale(0.7);
+    }
+    .video__item {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
     .mediabank-image__item:nth-of-type(3n+3) {
         margin-right: 0;
     }
@@ -502,7 +540,7 @@ a.lightbox-close:after {
         white-space: nowrap;
     }
     .nav-pills {
-        margin: 120px 16px 64px;
+        margin: 40px 16px 64px;
     }
     .tab-pane {
         max-width: 728px;
@@ -515,9 +553,6 @@ a.lightbox-close:after {
     .lightbox-target:target img {
         max-height: 230px !important;
         max-width: 100%;
-    }
-    footer.default .content .date {
-        left: 0% !important;
     }
     .lightbox-target h1 {
         font-size: 18px !important;

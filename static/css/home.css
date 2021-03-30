@@ -94,7 +94,7 @@
 
 .sections__row .item__link {
     background-blend-mode: color;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     max-width: 274px;
     max-height: 274px;
     width: 274px;
@@ -126,7 +126,7 @@
     font-weight: 700;
 }
 
-.item__link a{
+.item__link a {
     font-size: 30px;
     color: white !important;
     margin-right: 8px;
@@ -156,10 +156,11 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1024px) {
-    .carousel-info , .sections {
+    .carousel-info,
+    .sections {
         max-width: 1024px;
     }
-    .sections__row .item__link{
+    .sections__row .item__link {
         max-width: 228px;
         width: 228px;
         max-height: 228px;
@@ -173,10 +174,11 @@
 }
 
 @media screen and (max-width: 1024px) and (min-width: 728px) {
-    .carousel-info , .sections {
+    .carousel-info,
+    .sections {
         max-width: 728px;
     }
-    .sections__row .item__link{
+    .sections__row .item__link {
         max-width: 166px;
         width: 166px;
         max-height: 166px;
@@ -227,19 +229,19 @@
         position: relative;
     }
     .content .date {
-        left: 0;
+        left: 18px;
     }
-
     .content img {
         margin-right: 246px;
     }
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
-    .carousel-info , .sections {
+    .carousel-info,
+    .sections {
         max-width: 320px;
     }
-    .sections__row .item__link{
+    .sections__row .item__link {
         max-width: 320px;
         max-height: 320px;
         padding-top: 100px;
@@ -276,7 +278,7 @@
         display: flex;
     }
     .carousel-info {
-        top: -410px;
+        top: -460px;
     }
     .carousel-item {
         max-height: 550px;
