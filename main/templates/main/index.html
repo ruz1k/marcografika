@@ -30,6 +30,7 @@
                         </a>
                     </div>
                     <div class="social">
+                        <a href="{% url "order:order_service" %}" class="button">Оформить заказ</a>
                         <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
                         <a href="tel:+79870690441">+7 988 888 8888</a>
                         <img src={% static "media/icons/open-menu.svg" %} alt="menu" class="menu-btn" id="open-menu">
@@ -44,8 +45,7 @@
                         {% endif %}>Услуги</a>
                     <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
                         {%endif %}>Процесс</a>
-                    <a href="{% url "order:order_service" %}" {% if 'order' in request.path %} class="active"
-                        {%endif %}>Оформить заказ</a>
+                    <a href>О нас</a>
                     <a href>Контакты</a>
                 </nav>
             </div>
@@ -95,8 +95,7 @@
                 </li>
 
                 <li>
-                    <a href="{% url "order:order_service" %}" {% if 'order' in request.path %} class="active"
-                        {%endif %}>Оформить заказ</a>
+                    <a href>О нас</a>
                 </li>
                 <li>
                     <a href>Контакты</a>
