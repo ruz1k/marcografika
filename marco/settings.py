@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'main',
     'availability',
     'mediabank',
-    'order'
+    'order',
+    'contact'
 ]
 
 MIDDLEWARE = [

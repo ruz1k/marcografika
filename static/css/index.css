@@ -398,7 +398,7 @@ nav ul li a.active {
 
 .hamburger__header {
     max-width: 1200px;
-    margin: 24px auto;
+    margin: 16px auto;
 }
 
 @-webkit-keyframes slide-menu {
@@ -539,7 +539,7 @@ nav ul li {
         max-width: 1024px;
     }
     .links__content a {
-        margin-right: 128px;
+        margin-right: 150px;
     }
     .footer__container {
         max-width: 1024px;

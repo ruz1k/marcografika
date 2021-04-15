@@ -282,10 +282,28 @@ a.lightbox-close:after {
     padding-top: 21px;
     margin-bottom: 21px;
     padding-left: 8px;
+    opacity: 0;
+    transition: .3s opacity ease-in;
     max-width: 100% !important;
 }
 
+.lightbox-target:target h1 {
+    opacity: 1;
+    transition: 1s opacity ease-in;
+}
+
+.lightbox-target:target p {
+    opacity: 1;
+    transition: 1s opacity ease-in;
+}
+
+.lightbox-target:target a.button {
+    opacity: 1;
+    transition: 1s ease-in !important;
+}
+
 .lightbox-target p {
+    opacity: 0;
     font-size: 15px !important;
     text-align: left;
     color: black;
@@ -293,6 +311,7 @@ a.lightbox-close:after {
     white-space: normal !important;
     font-weight: 400 !important;
     max-width: 43% !important;
+    opacity: 0;
 }
 
 .lightbox-target a.button {
@@ -302,7 +321,8 @@ a.lightbox-close:after {
     font-size: 16px;
     background: #5a5a5a;
     border-radius: 30px;
-    transition: .3s;
+    transition: .3s ease-in;
+    opacity: 0;
 }
 
 .lightbox-target a.button:hover {

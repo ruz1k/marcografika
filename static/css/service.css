@@ -226,6 +226,11 @@ span.price {
     pointer-events: none;
 }
 
+.product-detail__description p {
+    max-width: 700px;
+    overflow-wrap: break-word;
+}
+
 @media screen and (max-width: 1520px) and (min-width: 1380px) {
     .product-list .item img {
         max-width: 213px;
@@ -335,6 +340,9 @@ span.price {
         position: relative !important;
         top: 32px;
     }
+    .product-detail__description p {
+        max-width: 500px;
+    }
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
@@ -366,6 +374,9 @@ span.price {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
+    }
+    .product-detail__description p {
+        max-width: 300px;
     }
     .path img {
         position: relative;

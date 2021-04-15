@@ -21,6 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('contact/', include('contact.urls')),
     path('service/', include('availability.urls', namespace='availability')),
     path('process/', include('mediabank.urls', namespace='mediabank')),
     path('order/', include('order.urls', namespace='order'))
