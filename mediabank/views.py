@@ -11,12 +11,15 @@ def media_photo(request, category_slug=None):
     paginatorVideo = Paginator(mediaFileVideo, 4)
     page = request.GET.get('page')
     try:
-        mediaFile = paginator.page(page)
         mediaFileVideo = paginatorVideo.page(page)
     except PageNotAnInteger:
-        mediaFile = paginator.page(1)
         mediaFileVideo = paginatorVideo.page(1)
     except EmptyPage:
-        mediaFile = paginator.page(paginator.num_pages)
         mediaFileVideo = paginatorVideo.page(paginatorVideo.num_pages)
+    try:
+        mediaFile = paginator.page(page)
+    except PageNotAnInteger:
+        mediaFile = paginator.page(1)
+    except EmptyPage:
+        mediaFile = paginator.page(paginator.num_pages)
     return render(request, 'mediabank/mediabank.html', {'mediaFile': mediaFile, 'mediaFileVideo': mediaFileVideo})
