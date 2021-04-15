@@ -8,7 +8,7 @@ def media_photo(request, category_slug=None):
     mediaFile = PhotoMedia.objects.filter()
     mediaFileVideo = VideoMedia.objects.filter()
     paginator = Paginator(mediaFile, 16)
-    paginatorVideo = Paginator(mediaFileVideo, 6)
+    paginatorVideo = Paginator(mediaFileVideo, 4)
     page = request.GET.get('page')
     try:
         mediaFile = paginator.page(page)
