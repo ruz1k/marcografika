@@ -8,6 +8,11 @@
     margin-right: 64px;   
 }
 
+footer.default {
+    position: absolute;
+    bottom: 0;
+}
+
 .contact__info a {
     display: block;
 }
