@@ -468,8 +468,8 @@ nav ul li a.active {
 }
 
 footer.default {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     width: 100%;
 }
 
