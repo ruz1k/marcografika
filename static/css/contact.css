@@ -1,0 +1,134 @@
+.row__contact {
+    display: flex;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.contact__map {
+    margin-right: 64px;   
+}
+
+footer.default {
+    position: absolute;
+    bottom: 0;
+}
+
+.contact__info a {
+    display: block;
+}
+
+.contact__info span {
+    display: flex;
+}
+
+.contact__info a, .contact__info span {
+    margin-bottom: 16px;
+}
+
+.contact__info a:nth-child(1){
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    opacity: 0.6;
+    transition: .3s ease-in;
+}
+
+.contact__info a:nth-child(1):hover{
+    opacity: 1;
+    transition: .3s ease-in;
+}
+
+.contact__info span:hover img {
+    opacity: 1;
+    transition: .3s ease-in;
+}
+
+.contact__info span a {
+    opacity: 0.6;
+    max-width: 200px;
+    transition: .3s ease-in;
+}
+
+.contact__info span:hover a {
+    opacity: 1;
+    transition: .3s ease-in;
+}
+
+.contact__info span img {
+    position: relative;
+    top: 3px;
+    margin-right: 8px;
+    opacity: 0.6;
+    transition: .3s ease-in;
+}
+
+.contact__info p {
+    max-width: 250px;
+}
+
+.contact__info a.question {
+    border: 1px solid black;
+    opacity: 0.6;
+    transition: .3s ease-in;
+    padding: 14px 77px;
+    width: max-content;
+    font-weight: bold;
+}
+
+.contact__info a.question:hover {
+    opacity: 1;
+    transition: .3s ease-in;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .row__contact {
+        display: flex;
+        max-width: 1024px;
+        margin: 80px auto;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 728px) {
+    iframe {
+        max-width: 400px;
+    }
+    .contact__info a:nth-child(1) {
+        font-size: 28px;
+    }
+
+    .content .date {
+        left: 36% !important;
+    }
+
+    .contact__map {
+        margin-right: 32px;
+    }
+
+    .row__contact {
+        max-width: 728px;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+    iframe {
+        max-width: 320px;
+        margin-bottom: 16px;
+    }
+    .contact__info a:nth-child(1) {
+        font-size: 28px;
+    }
+
+    .contact__map {
+        margin-right: 32px;
+    }
+
+    footer {
+        position: relative !important;
+    }
+
+    .row__contact {
+        margin: 16px 0 0 16px;
+        max-width: 728px;
+        flex-flow: wrap;
+    }
+}

@@ -1,0 +1,73 @@
+{% extends 'main/index.html' %} {% load static %} {%block title%}Оформление заказа{%endblock%} {%block styles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/order.css' %}" /> {%endblock%} {% block content %}
+<div class="order-title">
+    <h1>Оформление заказа</h1>
+    <p>Заполните форму и в ближайшее время мы с Вами обязательно свяжемся</p>
+</div>
+<div class="order__row">
+    <div class="order-form">
+        <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mleoqogo"
+            method="post">
+            <fieldset id="fs-frm-inputs">
+                <div class="form-group">
+                    <input class="form-control__input" type="text" name="Имя" id="full-name" required="">
+                    <label class="form-placeholder" for="full-name">Ваше имя</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-control__input" type="telephone" name="Телефон" id="telephone" required="">
+                    <label class="form-placeholder" for="telephone">Номер телефона</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-control__input" type="text" name="_replyto" id="email-address" required="">
+                    <label class="form-placeholder" for="email-address">Email</label>
+                </div>
+                <select name="Услуга" id="attending" required="">
+                    <option value="" hidden disabled selected>Выбрать тип услуги</option>
+                    {% for order in orders %}
+                    <option value='{{order.name}}'>{{order.name}}</option>
+                    {% endfor %}
+                </select>
+                <div class="form-group">
+                    <textarea class="form-control__input" rows="5" name="Описание" id="message" required=""></textarea>
+                    <label class="form-placeholder" for="message">Описание</label>
+                </div>
+                <input type="file" name="Вложения" accept="image/png, image/jpeg">
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <input class="submit-btn" type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+{% endblock %} {%block footer%}
+<footer class="default order">
+    <div class="footer__container">
+        <div class="container__content">
+            <div class="content">
+                <a href="{%url 'index' %}">
+                    <img src={% static "media/icons/logo.png" %} alt="logo" width="220" height="40" />
+                </a>
+                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                <div class="social-networks footer">
+                    <a href="https://www.instagram.com/marcografika/">
+                        <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />
+                    </a>
+                    <a href="https://vk.com/fotobulak">
+                        <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
+                        <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40" />
+                    </a>
+                </div>
+            </div>
+            <div class='scroll-to-top'>
+                <img src={% static "media/icons/to-top.svg" %} alt="logo" width="15" height="15" />
+            </div>
+            <script type="text/javascript">
+                $('.scroll-to-top').click(function () {
+                    $(window).scrollTop(0);
+                });
+            </script>
+        </div>
+    </div>
+</footer>
+{%endblock%}

@@ -30,6 +30,7 @@
                         </a>
                     </div>
                     <div class="social">
+                        <a href="{% url "order:order_service" %}" class="button">Оформить заказ</a>
                         <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
                         <a href="tel:+79870690441">+7 988 888 8888</a>
                         <img src={% static "media/icons/open-menu.svg" %} alt="menu" class="menu-btn" id="open-menu">
@@ -44,8 +45,9 @@
                         {% endif %}>Услуги</a>
                     <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
                         {%endif %}>Процесс</a>
-                    <a href>Оформить заказ</a>
-                    <a href>Контакты</a>
+                    <a href>О нас</a>
+                    <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active"
+                        {%endif %}>Контакты</a>
                 </nav>
             </div>
             <script type="text/javascript">
@@ -94,16 +96,17 @@
                 </li>
 
                 <li>
-                    <a href>Оформить заказ</a>
+                    <a href>О нас</a>
                 </li>
                 <li>
-                    <a href>Контакты</a>
+                    <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active"
+                        {%endif %}>Контакты</a>
                 </li>
             </ul>
             <div class="hamburger__information">
                 <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
                 <a href="tel:+79870690441">+7 988 888 8888</a>
-                <a href>Ул. Космонавтов, 71, Казань, Респ. Татарстан, 420061</a>
+                <a href="https://yandex.ru/maps/43/kazan/house/ulitsa_kosmonavtov_71/YEAYdAdpQEwOQFtvfXt4d3lmYw==/?ll=49.209998%2C55.796557&z=17.22">Ул. Космонавтов, 71, Казань, Респ. Татарстан, 420061</a>
                 <div class="social-networks">
                     <a href="https://www.instagram.com/marcografika/">
                         <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />

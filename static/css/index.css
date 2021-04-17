@@ -121,7 +121,7 @@ a {
 }
 
 .links__content a {
-    margin-right: 172px;
+    margin-right: 194px;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
     color: #5a5a5a !important;
@@ -161,8 +161,8 @@ footer.default {
     border-right: 1px solid transparent;
 }
 
-.social a:nth-child(1),
-.social a:nth-child(2) {
+.social a:nth-child(2),
+.social a:nth-child(3) {
     position: relative;
     font-weight: bold;
     color: #5a5a5a !important;
@@ -175,14 +175,14 @@ footer.default {
     opacity: .7;
 }
 
-.social a:nth-child(1)::after,
-.social a:nth-child(2)::after {
+.social a:nth-child(1)::after {
     content: '';
     margin-left: 16px;
+    margin-right: 16px;
     border-right: 1px solid #5a5a5a;
 }
 
-.social a:nth-child(1n+3) {
+.social a:nth-child(1n+4) {
     max-width: 40px;
     width: 40px;
     margin-right: 16px;
@@ -208,7 +208,7 @@ footer.default {
 
 footer {
     border-top: 1px solid black;
-    padding: 16px 0;
+    padding: 20px 0;
 }
 
 footer {
@@ -228,6 +228,11 @@ footer {
     position: absolute;
     right: 0;
     opacity: 0.8;
+}
+
+.social-networks.footer {
+    position: absolute;
+    right: 0;
 }
 
 nav .close-button {
@@ -285,6 +290,11 @@ nav ul {
     transition: .3s opacity ease-in-out;
 }
 
+.hamburger__information {
+    opacity: 0;
+}
+
+
 nav ul li a {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
@@ -304,13 +314,24 @@ nav ul li a.active {
 
 .show-menu {
     display: block;
-    -webkit-animation: slide-menu 1s ease-in forwards;
-    animation: slide-menu 1s ease-in forwards;
+    -webkit-animation: slide-menu .6s ease-in forwards;
+    animation: slide-menu .6s ease-in forwards;
 }
 
+
+
 .show-menu .close-button {
-    -webkit-animation: show-x 1s 1s forwards;
-    animation: show-x 1s 1s forwards;
+    -webkit-animation: show-x .6s.6s forwards;
+    animation: show-x .6s .6s forwards;
+}
+
+.show-menu .hamburger__header img {
+    -webkit-animation: show-x .6s.6s forwards;
+    animation: show-x .6s .6s forwards;
+}
+
+.hamburger__header img {
+    opacity: 0;
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
@@ -339,36 +360,45 @@ nav ul li a.active {
         -webkit-animation: menu-item-anim .4s forwards 1.4s ease-in-out !important;
         animation: menu-item-anim .4s forwards 1.4s ease-in-out !important;
     }
+    .show-menu .hamburger__information {
+        -webkit-animation: menu-item-anim .4s forwards 1.6s ease-in-out !important;
+        animation: menu-item-anim .4s forwards 1.6s ease-in-out !important;
+    }
 }
 
 .show-menu li:nth-of-type(1) {
+    -webkit-animation: menu-item-anim .6s forwards 0.6s ease-in-out;
+    animation: menu-item-anim .6s forwards 0.6s ease-in-out;
+}
+
+.show-menu li:nth-of-type(2) {
+    -webkit-animation: menu-item-anim .6s forwards 0.8s ease-in-out;
+    animation: menu-item-anim .6s forwards 0.8s ease-in-out;
+}
+
+.show-menu li:nth-of-type(3) {
     -webkit-animation: menu-item-anim .6s forwards 1s ease-in-out;
     animation: menu-item-anim .6s forwards 1s ease-in-out;
 }
 
-.show-menu li:nth-of-type(2) {
+.show-menu li:nth-of-type(4) {
     -webkit-animation: menu-item-anim .6s forwards 1.2s ease-in-out;
     animation: menu-item-anim .6s forwards 1.2s ease-in-out;
 }
 
-.show-menu li:nth-of-type(3) {
-    -webkit-animation: menu-item-anim .6s forwards 1.6s ease-in-out;
-    animation: menu-item-anim .6s forwards 1.6s ease-in-out;
-}
-
-.show-menu li:nth-of-type(4) {
-    -webkit-animation: menu-item-anim .6s forwards 1.8s ease-in-out;
-    animation: menu-item-anim .6s forwards 1.8s ease-in-out;
-}
-
 .show-menu li:nth-of-type(5) {
-    -webkit-animation: menu-item-anim .6s forwards 2s ease-in-out;
-    animation: menu-item-anim .6s forwards 2s ease-in-out;
+    -webkit-animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+    animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+}
+
+.show-menu .hamburger__information {
+    -webkit-animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+    animation: menu-item-anim .6s forwards 1.4s ease-in-out;
 }
 
 .hamburger__header {
     max-width: 1200px;
-    margin: 24px auto;
+    margin: 16px auto;
 }
 
 @-webkit-keyframes slide-menu {
@@ -437,6 +467,13 @@ nav ul li a.active {
     }
 }
 
+footer.default {
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+}
+
+
 nav ul a {
     color: white;
     font-weight: bold;
@@ -471,9 +508,8 @@ nav ul li {
 .scroll-to-top {
     position: absolute;
     right: 0;
-    padding: 16px;
-    padding: 12px;
-    top: -38px;
+    padding: 6px 12px;
+    top: -42px;
     background: white;
     border: 1px solid #5a5a5a;
     cursor: pointer;
@@ -481,6 +517,8 @@ nav ul li {
 
 .scroll-to-top img {
     transform: rotate(-90deg);
+    position: relative;
+    top: -2px;
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -491,7 +529,7 @@ nav ul li {
 
 @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1200px) {
     footer.home {
-        margin-top: -50px;
+        margin-top: -50px !important;
     }
 }
 
@@ -501,7 +539,7 @@ nav ul li {
         max-width: 1024px;
     }
     .links__content a {
-        margin-right: 128px;
+        margin-right: 150px;
     }
     .footer__container {
         max-width: 1024px;
@@ -527,12 +565,28 @@ nav ul li {
         max-width: 1024px;
         margin: 32px auto;
     }
+    footer.home {
+        margin-top: 1000px;
+    }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 728px) {
     .links__content,
     .container__logo-social {
         max-width: 728px;
+    }
+    .social {
+        position: relative;
+        top: 6px;
+        left: 18px;
+    }
+    .social-networks.footer {
+        width: 100%;
+        padding-top: 8px;
+        position: relative;
+    }
+    .social-networks.footer img {
+        margin-right: 16px !important;
     }
     .social a:nth-child(1),
     .social a:nth-child(2) {
@@ -541,7 +595,7 @@ nav ul li {
         top: 3px;
     }
     .links__content a {
-        margin-right: 54px;
+        margin-right: 76px;
     }
     .footer__container {
         max-width: 728px;
@@ -583,16 +637,31 @@ nav ul li {
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
+    footer.default {
+        position: relative;
+    }
+    .social-networks a {
+        opacity: 1 !important;
+    }
+    footer {
+        padding: 8px 0;
+    }
+    .service-detail .footer__container {
+        position: relative;
+        top: -22px;
+    }
     .container__logo-social {
         padding-left: 16px;
     }
     .links__content a {
-        margin-right: 54px;
+        margin-right: 24px;
+        opacity: .5;
         padding-left: 16px;
         background-size: 0 !important;
     }
     .links__content a.active {
         color: black !important;
+        opacity: 1;
     }
     .footer__container {
         padding-left: 16px;
@@ -626,6 +695,10 @@ nav ul li {
     a {
         font-size: 14px;
     }
+    .social-networks.footer {
+        position: relative;
+        top: 16px;
+    }
     .container__content .content span {
         position: relative;
     }
@@ -650,6 +723,7 @@ nav ul li {
     }
     .hamburger__information a {
         font-size: 16px;
+        max-width: 220px;
     }
     .close-button,
     .menu-btn {

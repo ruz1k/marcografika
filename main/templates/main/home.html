@@ -1,126 +1,137 @@
 {% extends 'main/index.html' %} {% load static %}
-{%block title%}Главная страница{%endblock%}
-{%block styles%}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
-{%endblock%}
-{%block content%}
-<div class="wrapper__home">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="2000">
-                <img src={% static 'media/images/carousel1.jpg' %} alt="image" width="1920" height="780" />
+{% block title %}Главная страница{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="wrapper__home">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src={% static 'media/images/carousel1.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src={% static 'media/images/carousel2.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src={% static 'media/images/carousel3.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src={% static 'media/images/carousel4.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src={% static 'media/images/carousel5.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src={% static 'media/images/carousel6.jpg' %} alt="image" width="1920" height="780"/>
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src={% static 'media/images/carousel2.jpg' %} alt="image" width="1920" height="780" />
+        </div>
+        <div class="carousel-info">
+            <h1>Студия печати на Космонавтов Marcografika</h1>
+            <ul>
+                <li>Услуги типографии, фотопечать, cувенирная продукция</li>
+                <li>Качественная печать любой сложности</li>
+                <li>Опытные специалисты</li>
+                <li>Приемлемые цены</li>
+            </ul>
+            <a href>Сделать заказ</a>
+        </div>
+        <div class="sections">
+            <div class="sections__item">
+                <div class="sections__row">
+                    <h2>Услуги</h2>
+                </div>
+                <div class="sections__row">
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__link service">
+                        <a href="{% url "availability:product_list" %}">Услуги</a>
+                        <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20"/>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src={% static 'media/images/carousel3.jpg' %} alt="image" width="1920" height="780" />
+            <div class="sections__item">
+                <div class="sections__row">
+                    <h2>Процесс</h2>
+                </div>
+                <div class="sections__row">
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__link process">
+                        <a href="{% url "mediabank:media_photo" %}">Процесс</a>
+                        <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20"/>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src={% static 'media/images/carousel4.jpg' %} alt="image" width="1920" height="780" />
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src={% static 'media/images/carousel5.jpg' %} alt="image" width="1920" height="780" />
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src={% static 'media/images/carousel6.jpg' %} alt="image" width="1920" height="780" />
+            <div class="sections__item">
+                <div class="sections__row">
+                    <h2>О нас</h2>
+                </div>
+                <div class="sections__row">
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__images">
+                        <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274"/>
+                    </div>
+                    <div class="item__link about-company">
+                        <a href>О нас</a>
+                        <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="carousel-info">
-        <h1>Студия печати на Космонавтов Marcografika</h1>
-        <ul>
-            <li>Услуги типографии, фотопечать, cувенирная продукция</li>
-            <li>Качественная печать любой сложности</li>
-            <li>Опытные специалисты</li>
-            <li>Приемлемые цены</li>
-        </ul>
-        <a href>Сделать заказ</a>
-    </div>
-    <div class="sections">
-        <div class="sections__item">
-            <div class="sections__row">
-                <h2>Услуги</h2>
-            </div>
-            <div class="sections__row">
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
+{% endblock %}
+{% block footer %}
+    <footer class="home">
+        <div class="footer__container">
+            <div class="container__content">
+                <div class="content">
+                    <a href="{% url 'index' %}">
+                        <img src={% static "media/icons/logo.png" %} alt="logo" width="220" height="40"/>
+                    </a>
+                    <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
+                    <div class="social-networks footer">
+                        <a href="https://www.instagram.com/marcografika/">
+                            <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40"/>
+                        </a>
+                        <a href="https://vk.com/fotobulak">
+                            <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40"/>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
+                            <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40"/>
+                        </a>
+                    </div>
                 </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
+                <div class='scroll-to-top'>
+                    <img src={% static "media/icons/to-top.svg" %} alt="logo" width="15" height="15"/>
                 </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__link service">
-                    <a href="{% url "availability:product_list" %}">Услуги</a>
-                    <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20" />
-                </div>
-            </div>
-        </div>
-        <div class="sections__item">
-            <div class="sections__row">
-                <h2>Процесс</h2>
-            </div>
-            <div class="sections__row">
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__link process">
-                    <a href>Процесс</a>
-                    <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20" />
-                </div>
+                <script type="text/javascript">
+                    $('.scroll-to-top').click(function () {
+                        $(window).scrollTop(0);
+                    });
+
+                </script>
             </div>
         </div>
-        <div class="sections__item">
-            <div class="sections__row">
-                <h2>Пример работ</h2>
-            </div>
-            <div class="sections__row">
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__images">
-                    <img src={% static 'media/images/carousel1.jpg' %} alt="photo" width="274" height="274" />
-                </div>
-                <div class="item__link examples">
-                    <a href>Работы</a>
-                    <img src={% static 'media/icons/right-arrow.svg' %} alt="photo" width="20" height="20" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{%endblock%}
-{%block footer%}
-<footer class="home">
-    <div class="footer__container">
-        <div class="container__content">
-            <div class="content">
-                <a href="{%url 'index' %}">
-                    <img src={% static "media/icons/logo.png" %} alt="logo" width="220" height="40" />
-                </a>
-                <span class="date">© 2017-2021, OOO MARCOGRAFIKA</span>
-                <span>Сайт разработан <a href>«AROMANCHEV»</a></span>
-            </div>
-            <div class='scroll-to-top'>
-                <img src={% static "media/icons/to-top.svg" %} alt="logo" width="20" height="20" />
-            </div>
-            <script type="text/javascript">
-                $('.scroll-to-top').click(function () {
-                    $(window).scrollTop(0);
-                });
-            </script>
-        </div>
-    </div>
-</footer>
-{%endblock%}
+    </footer>
+{% endblock %}

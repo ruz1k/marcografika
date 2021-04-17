@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'availability',
-    'mediabank'
+    'mediabank',
+    'order',
+    'contact'
 ]
 
 MIDDLEWARE = [
