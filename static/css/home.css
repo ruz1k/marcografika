@@ -278,11 +278,11 @@
         display: flex;
     }
     .carousel-info {
-        top: -460px;
+        top: -405px;
         margin: 0 16px;
     }
     .carousel-item {
-        max-height: 550px;
+        max-height: 440px;
     }
     .carousel-info ul {
         margin-bottom: 24px;
