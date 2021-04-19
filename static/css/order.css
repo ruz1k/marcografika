@@ -105,6 +105,15 @@ select {
     height: 240px;
 }
 
+input.file {
+    border: none;
+    border-radius: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+
 .submit-btn {
     background: none;
     transition: .3s;
@@ -153,6 +162,9 @@ textarea:focus {
         max-width: 300px;
         width: 300px;
         margin-right: 0;
+    }
+
+    .form-group textarea {
         margin-bottom: 16px;
     }
 

@@ -122,7 +122,11 @@ footer.default {
         margin-right: 32px;
     }
 
+<<<<<<< HEAD
     footer {
+=======
+    footer.default {
+>>>>>>> 66a0503a8df92ed941cfbb9dca42c574ed67701b
         position: relative !important;
     }
 

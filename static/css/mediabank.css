@@ -575,11 +575,7 @@ a.lightbox-close:after {
         margin: 0 16px;
     }
     .lightbox-target:target img {
-        max-height: 230px !important;
-        max-width: 100%;
-    }
-    .lightbox-target:target img {
-        max-height: 230px !important;
+        max-height: 180px !important;
         max-width: 100%;
     }
     .lightbox-target h1 {
@@ -587,6 +583,7 @@ a.lightbox-close:after {
         padding-top: 21px;
         position: relative;
         top: 8px;
+        padding-left: 14px;
     }
     .lightbox-target hr {
         max-width: 100% !important;
@@ -599,7 +596,7 @@ a.lightbox-close:after {
     .lightbox-target p {
         font-size: 14px !important;
         max-width: 90% !important;
-        padding-left: 8px;
+        padding-left: 16px;
     }
     .lightbox-target .card-content img {
         margin-right: 0px;
@@ -609,4 +606,11 @@ a.lightbox-close:after {
     .lightbox-target:target img {
         max-height: 200px;
     }
+<<<<<<< HEAD
 }
+=======
+    .lightbox-target a.button {
+        margin-left: 16px;
+    }
+}
+>>>>>>> 66a0503a8df92ed941cfbb9dca42c574ed67701b
