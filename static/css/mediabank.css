@@ -540,6 +540,9 @@ a.lightbox-close:after {
         margin-right: 0;
         margin-bottom: 16px;
     }
+    .video__item p {
+        max-width: 300px; 
+    }
     .mediabank-image__item:nth-of-type(3n+3) {
         margin-right: 0;
     }
