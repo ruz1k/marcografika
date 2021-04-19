@@ -122,6 +122,10 @@ footer.default {
         margin-right: 32px;
     }
 
+    footer.default {
+        position: relative !important;
+    }
+
     .row__contact {
         margin: 16px 0 0 16px;
         max-width: 728px;

@@ -43,7 +43,9 @@
                 <img src="{% if product.image %}{{ product.image.url }}{% else %}../../../../../static/media/icons/no_photo.png {% endif %}"
                     width="256" height="256" alt="product-image">
                 <p data-bs-toggle="tooltip" data-bs-placement="top" title="{{ product.name }}">{{ product.name }}</p>
-                <span>{{ product.price }} ₽</span>
+                <p class="price">{{ product.price }} ₽</p>
+                <span>Перейти</span>
+                <img src={% static "media/icons/to-top.svg" %} alt="arrow" width="10" height="10" />
             </a>
         </div>
         {% endfor %}
