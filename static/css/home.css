@@ -118,7 +118,7 @@
 }
 
 .examples {
-    background: url('../../static/media/images/camera.png');
+    background: url('../../static/media/images/about-us.png');
 }
 
 .sections__row h2 {
@@ -263,7 +263,8 @@
         margin-bottom: 32px;
     }
     .sections {
-        top: -330px
+        top: -330px;
+        margin: 0 16px
     }
     .sections__row h2 {
         font-size: 24px;
@@ -278,10 +279,11 @@
         display: flex;
     }
     .carousel-info {
-        top: -460px;
+        top: -400px;
+        margin: 0 16px;
     }
     .carousel-item {
-        max-height: 550px;
+        max-height: 440px;
     }
     .carousel-info ul {
         margin-bottom: 24px;

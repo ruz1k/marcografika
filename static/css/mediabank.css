@@ -601,4 +601,7 @@ a.lightbox-close:after {
     .lightbox-target a.button {
         margin-left: 16px;
     }
+    .video p {
+        max-width: 300px;
+    }
 }
