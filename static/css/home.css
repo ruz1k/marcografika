@@ -278,6 +278,7 @@
     }
     .carousel-info {
         top: -460px;
+        margin: 0 16px;
     }
     .carousel-item {
         max-height: 550px;
