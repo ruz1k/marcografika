@@ -606,11 +606,12 @@ a.lightbox-close:after {
     .lightbox-target:target img {
         max-height: 200px;
     }
-<<<<<<< HEAD
-}
-=======
     .lightbox-target a.button {
         margin-left: 16px;
     }
+
+    .video p {
+        max-width: 300px;
+    }
 }
->>>>>>> 66a0503a8df92ed941cfbb9dca42c574ed67701b
+>>>>>>> 7cabf39bd5121ea0ab85c13b3f29f2f8317831d2

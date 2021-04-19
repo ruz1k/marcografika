@@ -644,7 +644,7 @@ nav ul li {
         opacity: 1 !important;
     }
     footer {
-        padding: 8px 0;
+        padding: 8px 0 32px;
     }
     .service-detail .footer__container {
         position: relative;
@@ -723,7 +723,8 @@ nav ul li {
     }
     .hamburger__information a {
         font-size: 16px;
-        max-width: 220px;
+        max-width: 240px;
+        opacity: 1;
     }
     .close-button,
     .menu-btn {
