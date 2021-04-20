@@ -33,109 +33,103 @@
                         <a href="{% url "order:order_service" %}" class="button">Оформить заказ</a>
                         <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
                         <a href="tel:+79870690441">+7 988 888 8888</a>
-                        <img src={% static "media/icons/open-menu.svg" %} alt="menu" class="menu-btn" id="open-menu">
                     </div>
                 </div>
             </div>
-            <div class="container__links">
-                <nav class="links__content">
-                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
-                        страница</a>
-                    <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active"
-                        {% endif %}>Услуги</a>
-                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
-                        {%endif %}>Процесс</a>
-                    <a href>О нас</a>
-                    <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active"
-                        {%endif %}>Контакты</a>
-                </nav>
-            </div>
-            <script type="text/javascript">
-                let header = $('.container__links'),
-                    scrollPrev = 0;
-                $(window).scroll(function () {
-                    let scrolled = $(window).scrollTop();
+        </div>
+        <div class="container__links">
+            <nav class="links__content">
+                <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
+                    страница</a>
+                <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active" {%endif %}>Услуги</a>
+                <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active" {%endif%}>Процесс</a>
+                <a href>О нас</a>
+                <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active" {%endif %}>Контакты</a>
+            </nav>
+        </div>
+        <script type="text/javascript">
+            let header = $('.container__links'),
+                scrollPrev = 0;
+            $(window).scroll(function () {
+                let scrolled = $(window).scrollTop();
 
 
-                    if (scrolled > 100 && scrolled > scrollPrev) {
-                        header.addClass('out');
-                    } else {
-                        header.removeClass('out');
-                    }
-                    scrollPrev = scrolled;
-                });
-            </script>
+                if (scrolled > 100 && scrolled > scrollPrev) {
+                    header.addClass('out');
+                } else {
+                    header.removeClass('out');
+                }
+                scrollPrev = scrolled;
+            });
+        </script>
         </div>
     </header>
     <div class="main-wrapper">
         {% block content %}{% endblock %}
     </div>
     {%block footer%}{%endblock%}
-    <nav id="overlay" class="hamburger">
-        <div class="hamburger__header">
-            <a href="{%url 'index' %}">
-                <img src={% static 'media/icons/logo.png' %} alt="logo" width="220" height="40" />
-            </a>
-            <img src={% static "media/icons/close.svg" %} alt="menu" class="close-button" id="close-menu">
-        </div>
-        <div class="hamburger__content">
-            <ul>
-                <li>
-                    <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
-                        страница</a>
-                </li>
-
-                <li>
-                    <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active"
-                        {% endif %}>Услуги</a>
-                </li>
-
-                <li>
-                    <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
-                        {%endif %}>Процесс</a>
-                </li>
-
-                <li>
-                    <a href>О нас</a>
-                </li>
-                <li>
-                    <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active"
-                        {%endif %}>Контакты</a>
-                </li>
-            </ul>
-            <div class="hamburger__information">
-                <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
-                <a href="tel:+79870690441">+7 988 888 8888</a>
-                <a href="https://yandex.ru/maps/43/kazan/house/ulitsa_kosmonavtov_71/YEAYdAdpQEwOQFtvfXt4d3lmYw==/?ll=49.209998%2C55.796557&z=17.22">Ул. Космонавтов, 71, Казань, Респ. Татарстан, 420061</a>
-                <div class="social-networks">
-                    <a href="https://www.instagram.com/marcografika/">
-                        <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />
-                    </a>
-                    <a href="https://vk.com/fotobulak">
-                        <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40" />
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
-                        <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40" />
-                    </a>
-                </div>
+    <div class="menu">
+        <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <span aria-hidden="true"></span>
+        </button>
+        <nav id="overlay" class="hamburger">
+            <div class="hamburger__header">
+                <a href="{%url 'index' %}">
+                    <img src={% static 'media/icons/logo.png' %} alt="logo" width="220" height="40" />
+                </a>
             </div>
-        </div>
-        <script type="text/javascript">
-            const overlay = document.getElementById('overlay');
-            const closeMenu = document.getElementById('close-menu');
+            <div class="hamburger__content">
+                <ul>
+                    <li>
+                        <a href="{%url 'index' %}" {% if request.path == '/' %} class="active" {% endif %}>Главная
+                            страница</a>
+                    </li>
 
+                    <li>
+                        <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %}
+                            class="active" {% endif %}>Услуги</a>
+                    </li>
 
-            document.getElementById('open-menu').addEventListener('click', function () {
-                overlay.classList.add('show-menu');
-                $("body").addClass('no-overflow');
-            });
+                    <li>
+                        <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active"
+                            {%endif %}>Процесс</a>
+                    </li>
 
-            document.getElementById('close-menu').addEventListener('click', function () {
-                overlay.classList.remove('show-menu')
-                $("body").removeClass('no-overflow');
-            })
-        </script>
-    </nav>
+                    <li>
+                        <a href>О нас</a>
+                    </li>
+                    <li>
+                        <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active" {%endif%}>Контакты</a>
+                    </li>
+                </ul>
+                <div class="hamburger__information">
+                    <a href="mailto:marco1192@mail.ru">marco1192@mail.ru</a>
+                    <a href="tel:+79870690441">+7 988 888 8888</a>
+                    <a
+                        href="https://yandex.ru/maps/43/kazan/house/ulitsa_kosmonavtov_71/YEAYdAdpQEwOQFtvfXt4d3lmYw==/?ll=49.209998%2C55.796557&z=17.22">Ул.
+                        Космонавтов, 71, Казань, Респ. Татарстан, 420061</a>
+                    <div class="social-networks">
+                        <a href="https://www.instagram.com/marcografika/">
+                            <img src={% static 'media/icons/instagram.svg' %} alt="instagram" width="40" height="40" />
+                        </a>
+                        <a href="https://vk.com/fotobulak">
+                            <img src={% static "media/icons/vk.svg" %} alt="vk" width="40" height="40" />
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCOu3eWZ0Zh5aUSvfHqGnnZQ">
+                            <img src={% static "media/icons/youtube.svg" %} alt="youtube" width="40" height="40" />
+                        </a>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    const menu = document.querySelector('.menu');
+                    const btn = menu.querySelector('.nav-tgl');
+                    btn.addEventListener('click', evt => {
+                        menu.classList.toggle('active');
+                    })
+                </script>
+            </div>
+        </nav>
+    </div>
 </body>
 
 </html>
