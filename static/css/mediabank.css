@@ -9,7 +9,7 @@
     margin-bottom: 16px;
 }
 
-.no-overflow.main-wrapper {
+.no-overflow .main-wrapper {
     z-index: 101;
 }
 
