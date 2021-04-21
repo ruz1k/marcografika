@@ -4,11 +4,11 @@
     display: block !important;
     z-index: 99
 }
-.menu .hamburger{
+/* .menu .hamburger{
     pointer-events: none;
     position: relative;
     z-index: 0;
-}
+} */
 .nav-tgl {
     display: inline-block;
     cursor: pointer;
