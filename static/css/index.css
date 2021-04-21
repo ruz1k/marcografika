@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-.hamburger {
+.menu.active.hamburger {
     display: block !important;
+    width: 100%;
+    height: 100%;
+}
+.menu.hamburger {
+    width: 1px;
+    height: 1px;
 }
 .nav-tgl {
     display: inline-block;
