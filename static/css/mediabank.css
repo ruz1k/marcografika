@@ -10,7 +10,7 @@
 }
 
 .no-overflow.main-wrapper {
-    z-index: 101
+    z-index: 101;
 }
 
 .video-player img {
