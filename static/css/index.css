@@ -9,7 +9,7 @@
 }
 
 .menu.active .hamburger__header, .menu.active .hamburger__content {
-    display: block;
+    display: flex;
 }
 .nav-tgl {
     display: inline-block;
