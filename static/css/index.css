@@ -4,9 +4,12 @@
     display: block !important;
     width: 100%;
     height: 100%;
+    z-index: 99999
 }
 .menu .hamburger, .menu .hamburger__information {
-    display: none;
+    pointer-events: none;
+    position: relative;
+    z-index: 0;
     width: 0.001px;
     height: 0.001px;
 }
@@ -153,6 +156,7 @@ body {
 .main-wrapper {
     padding-top: 130px;
     position: relative;
+    z-index: 10;
 }
 
 header {
