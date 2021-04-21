@@ -738,6 +738,9 @@ nav ul li {
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
+    .menu.active .hamburger__header, .menu.active .hamburger__content {
+    display: block;
+    }
     footer.default {
         position: relative;
     }
