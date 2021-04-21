@@ -4,6 +4,13 @@
     display: block !important;
     z-index: 99
 }
+.menu .hamburger__header, .menu .hamburger__content {
+    display: none
+}
+
+.menu.active .hamburger__header, .menu.active .hamburger__content {
+    display: block;
+}
 .nav-tgl {
     display: inline-block;
     cursor: pointer;
