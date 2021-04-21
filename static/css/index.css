@@ -7,7 +7,7 @@
     display: inline-block;
     cursor: pointer;
     position: fixed;
-    z-index: 97;
+    z-index: 100;
     right: 16px;
     top: 8px;
     width: 50px;
@@ -146,14 +146,13 @@ body {
 .main-wrapper {
     padding-top: 130px;
     position: relative;
-    z-index: 99;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 97;
+    z-index: 100;
 }
 
 .container__wrapper {
