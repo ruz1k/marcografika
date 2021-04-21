@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-.menu.active .hamburger, .menu.active .hamburger__information {
+.menu.active .hamburger{
     display: block !important;
     width: 100%;
     height: 100%;
     z-index: 99999
 }
-.menu .hamburger, .menu .hamburger__information {
+.menu .hamburger{
     pointer-events: none;
     position: relative;
     z-index: 0;
