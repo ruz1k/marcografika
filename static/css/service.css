@@ -246,7 +246,7 @@ span.price {
     overflow-wrap: break-word;
 }
 
-@media screen and (max-width: 1520px) and (min-width: 1380px) {
+@media screen and (max-width: 1600px) and (min-width: 1380px) {
     .product-list .item img {
         max-width: 213px;
         max-height: 213px;

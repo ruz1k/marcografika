@@ -74,6 +74,7 @@ select {
     margin-right: 24px;
     border: 1px solid #5a5a5a;
     opacity: .5;
+    background: white;
     padding: 4px 13px;
     max-width: 220px;
     font-size: 13px;

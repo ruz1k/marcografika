@@ -9,6 +9,10 @@
     margin-bottom: 16px;
 }
 
+.no-overflow .main-wrapper {
+    z-index: 101;
+}
+
 .video-player img {
     width: 100%;
     height: 370px;
@@ -614,4 +618,3 @@ a.lightbox-close:after {
         max-width: 300px;
     }
 }
->>>>>>> 7cabf39bd5121ea0ab85c13b3f29f2f8317831d2
