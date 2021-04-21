@@ -609,7 +609,7 @@ nav ul li {
     top: -2px;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
     footer.home {
         margin-top: 1150px;
     }
