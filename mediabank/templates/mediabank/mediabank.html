@@ -71,7 +71,7 @@
 
                     iframe.height = target.clientHeight
                     iframe.width = target.clientWidth
-                    iframe.src = target.dataset.videoId + '?autoplay=1'
+                    iframe.src = 'https://www.youtube.com/embed/' + target.dataset.videoId + '?autoplay=1'
                     iframe.setAttribute('frameborder', 0)
 
                     target.classList.remove('mediabank')
