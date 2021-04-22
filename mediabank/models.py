@@ -19,7 +19,7 @@ class PhotoMedia(models.Model):
 class VideoMedia(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
-    link = models.URLField(null=True, blank=True)
+    link = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='mediabank/%Y/%m/%d', blank=True)
 
     class Meta:
