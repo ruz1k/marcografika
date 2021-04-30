@@ -263,7 +263,7 @@
     }
     .sections {
         top: -330px;
-        margin: 0 16px
+        margin: 0 16px;
     }
     .sections__row h2 {
         font-size: 24px;
@@ -278,7 +278,7 @@
         display: flex;
     }
     .carousel-info {
-        top: -400px;
+        top: -405px;
         margin: 0 16px;
     }
     .carousel-item {

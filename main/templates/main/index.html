@@ -43,7 +43,7 @@
                     страница</a>
                 <a href="{% url "availability:product_list" %}" {% if 'service' in request.path %} class="active" {%endif %}>Услуги</a>
                 <a href="{% url "mediabank:media_photo" %}" {% if 'process' in request.path %} class="active" {%endif%}>Процесс</a>
-                <a href>О нас</a>
+                <a href="{% url "aboutUs:aboutUs" %}" {% if 'about-us' in request.path %} class="active" {%endif %}>О нас</a>
                 <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active" {%endif %}>Контакты</a>
             </nav>
         </div>

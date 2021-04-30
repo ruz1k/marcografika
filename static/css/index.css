@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-.hamburger {
+.menu.active .hamburger{
     display: block !important;
+    z-index: 99
+}
+.menu .hamburger__header, .menu .hamburger__content {
+    display: none
+}
+
+.menu.active .hamburger__header, .menu.active .hamburger__content {
+    display: flex;
 }
 .nav-tgl {
     display: inline-block;
@@ -61,6 +69,7 @@
 }
 .menu {
     top: 0;
+    z-index: 100;
     position: absolute;
     width: 100%;
 }
@@ -145,6 +154,8 @@ body {
 
 .main-wrapper {
     padding-top: 130px;
+    position: relative;
+    z-index: 10;
 }
 
 header {
@@ -607,9 +618,12 @@ nav ul li {
     top: -2px;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
     footer.home {
         margin-top: 1150px;
+    }
+    .social {
+        right: 70px;
     }
 }
 
@@ -727,6 +741,9 @@ nav ul li {
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
+    .menu.active .hamburger__header, .menu.active .hamburger__content {
+    display: block;
+    }
     footer.default {
         position: relative;
     }
@@ -813,7 +830,8 @@ nav ul li {
     }
     .hamburger__information a {
         font-size: 16px;
-        max-width: 220px;
+        max-width: 240px;
+        opacity: 1;
     }
     .close-button,
     .menu-btn {

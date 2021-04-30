@@ -5,7 +5,7 @@
 }
 
 .contact__map {
-    margin-right: 64px;   
+    margin-right: 64px;
 }
 
 footer.default {
@@ -122,7 +122,7 @@ footer.default {
         margin-right: 32px;
     }
 
-    footer {
+    footer.default {
         position: relative !important;
     }
 
