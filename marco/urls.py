@@ -24,7 +24,8 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('service/', include('availability.urls', namespace='availability')),
     path('process/', include('mediabank.urls', namespace='mediabank')),
-    path('order/', include('order.urls', namespace='order'))
+    path('order/', include('order.urls', namespace='order')),
+    path('about-us/', include('aboutCompany.urls', namespace='aboutUs'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

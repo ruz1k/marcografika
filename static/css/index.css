@@ -622,6 +622,9 @@ nav ul li {
     footer.home {
         margin-top: 1150px;
     }
+    .social {
+        right: 70px;
+    }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1200px) {
