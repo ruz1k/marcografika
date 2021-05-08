@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class MainInfo(models.Model):
+    image = models.ImageField(upload_to='about-us/main-info/%Y/%m/%d', blank=True)
     information = models.TextField(blank=True)
     class Meta:
         verbose_name = 'Основная информация'

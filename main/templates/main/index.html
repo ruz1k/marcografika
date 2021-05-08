@@ -96,7 +96,7 @@
                     </li>
 
                     <li>
-                        <a href>О нас</a>
+                        <a href="{% url "aboutUs:aboutUs" %}" {% if 'about-us' in request.path %} class="active" {%endif %}>О нас</a>
                     </li>
                     <li>
                         <a href="{% url "contact" %}" {% if 'contact' in request.path %} class="active" {%endif%}>Контакты</a>

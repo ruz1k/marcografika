@@ -1,0 +1,115 @@
+.about-us {
+    max-width: 1200px;
+    margin: 32px auto;
+}
+
+.about-us__info-first .images {
+    max-width: 1200px;
+    width: 100%;
+    max-height: 480px;
+}
+
+.about-us__info-first .text__info { 
+    max-width: 900px;
+    margin: 0 auto;
+    background: #f6f3ff;
+    padding: 32px;
+    position: relative;
+    top: -160px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.2);
+}
+
+.about-us__info-second {
+    margin-top: -96px;
+    padding: 32px;
+    background: #f6f3ff;
+}
+
+.technologie__item {
+    margin-bottom: 64px;
+    margin-right: 24px;
+}
+
+.technologie__item:nth-child(4n+4) {
+    margin-right: 0;
+}
+
+.about-us__info-second__row {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.about-us__info-second h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+} 
+
+.technologie__item img {
+    max-width: 265px;
+    margin-bottom: 8px;
+    max-height: 265px;
+    height: 100%;
+    width: 100%;
+}
+
+.technologie__item p {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .about-us {
+        max-width: 1024px;
+    }
+    .technologie__item img {
+        max-width: 222px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 728px) {
+    .about-us {
+        max-width: 728px;
+    }
+    .technologie__item img {
+        max-width: 320px;
+    }
+    .about-us__info-first .text__info {
+        top: 0;
+    }
+    .about-us__info-second {
+        margin-top: 32px;
+    }
+    .technologie__item:nth-child(2n+2) {
+        margin-right: 0;
+    }
+    .about-us__info-second h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    .content .date {
+        left: 36%;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+    .technologie__item {
+        margin-bottom: 48px;
+        margin-right: 0;
+    }
+    .technologie__item img {
+        max-width: 320px;
+    }
+    .about-us__info-first .text__info {
+        top: 0;
+    }
+    .about-us__info-second {
+        margin-top: 32px;
+    }
+    .technologie__item:nth-child(4n+4) {
+        margin-right: 0;
+    }
+    .about-us__info-second h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+}

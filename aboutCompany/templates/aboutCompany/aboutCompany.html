@@ -1,7 +1,31 @@
 {% extends 'main/index.html' %} {% load static %} {%block title%}Процесс{%endblock%} {%block styles%}
 <link rel="stylesheet" type="text/css" href="{% static 'css/about-us.css' %}" /> {%endblock%} 
 {% block content %}
-<h1>Hello</h1>
+<div class="about-us">
+    <div class="about-us__info">
+        <div class="about-us__info-first">
+            {% for text in info %}
+            <img class="images" src="{{text.image.url}}" />
+            <div class="text__info">
+                <p>{{ text.information }}</p>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="about-us__info-second">
+            <h2>Технологии</h2>
+            <div class="about-us__info-second__row">
+            {% for technologie in technologies %}
+            <div class="technologie__item">
+                <img src="{{technologie.image.url}}" />
+                <div class="text__info">
+                    <p>{{ technologie.name }}</p>
+                </div>
+            </div>
+            {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %} 
 {%block footer%}
 <footer class="default">
