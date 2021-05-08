@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .menu.active .hamburger{
     display: block !important;
     z-index: 99
@@ -70,7 +71,7 @@
 .menu {
     top: 0;
     z-index: 100;
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
 .hamburger:before {
@@ -637,6 +638,9 @@ nav ul li {
     .links__content,
     .container__logo-social {
         max-width: 1024px;
+    }
+    .social {
+        right: 80px;
     }
     .links__content a {
         margin-right: 150px;
